@@ -1,0 +1,77 @@
+@import '/src/common/modern-reset.css';
+
+body {
+  font-family: SUIT, sans-serif;
+  /* em단위는 글자크기  의 배수
+  근데 글자크기없으면 fontsize 없으면  걍 상속 , 
+  기본 16px의 *2 
+  여백이라는것도 폰트사이즈에 비례해 여백이크고 작아진다다 */
+}
+
+.card {
+  /*border-radius: left-top right-top right-bottom left-bottom; 
+  overflow:hidden,flow-root,float:left,position:absoloute
+  display flow-root 를 써도 clearfix처럼 해결할수있음,
+  clearfix는 좀 안쓰는걸 권장한대 . 
+
+  float 로 레이아웃이 조금 떴을떄  부모가 자식요소를 못담고 어딧는지모를떄 , display:flow-root 를 사용
+  overflow hidden 과  clearfix 는  레거시방식이여서  이것보다는 
+  display:flow-root
+  */
+
+  /* background: pink; */
+  margin: 2em; /* 16 * 2 = 32px */
+  padding: 2em; /* 16 * 2 = 32px */
+  border: 1px solid red;
+  border-radius: 0.5rem;
+  &.good-partner {
+    display: flow-root;
+  }
+
+  /* 제목 */
+  .subject {
+    /* background: skyblue; */
+    font-size: 1.5rem;
+    font-weight: 600;
+    /* 언제 렘단위 로 설정하고 엠단위로 설정하는지 못들어서 물어봐야딤딤 */
+    span {
+      vertical-align: baseline;
+
+      &[lang='en'] {
+        font-size: 0.5em;
+      }
+    }
+  }
+  /* 이미지 */
+  .thumbnail {
+    /* 여기다가 지역변수를 가저다쓰면 여러군대 고칠꺼 그냥 지역변수 하나만 고쳐가지고 만들어내면 아주편하겠지? */
+    margin: 1em;
+    float: left;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    padding: 0.625em;
+    width: 100px;
+    height: auto;
+    shape-outside: circle(50%);
+    img {
+      max-width: 100%;
+      aspect-ratio: 1/1;
+      border-radius: inherit;
+      object-fit: fill;
+      object-position: 0;
+
+      /* asepect-ratio 는 진짜 중요함 , height 는 auto 부모 하잇 사이즈는 자식요소의 높이를 따라감 
+       aspect-ratio 쓰면 가로 세로 맞출수이음음 */
+    }
+  }
+  /* 내용 */
+  .content {
+    margin-top: 0.625rem;
+  }
+}
+
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}

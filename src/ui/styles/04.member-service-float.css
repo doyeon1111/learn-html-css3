@@ -1,0 +1,51 @@
+body {
+  font-family: 'SUIT', sans-serif;
+}
+
+ul,
+li {
+  text-decoration: none;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+.member-service {
+  float: right;
+  background-color: yellow;
+  border: 1px solid red;
+  display: flow-root;
+
+  .item {
+    float: left;
+    padding: 20px;
+    text-transform: uppercase;
+  }
+  & :nth-child(n + 2)::before {
+    content: ':';
+    margin-right: 40px;
+  }
+}
+
+.member-link {
+  float: right;
+  border: 1px solid black;
+  display: flow-root;
+  li {
+    float: left;
+    background-color: pink;
+  }
+  a {
+    float: left;
+
+    text-transform: uppercase;
+  }
+  span {
+    float: left;
+    margin-left: 20px;
+    margin-right: 20px;
+
+    background-color: red;
+  }
+}

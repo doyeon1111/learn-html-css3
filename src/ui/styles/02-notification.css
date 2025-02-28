@@ -1,0 +1,45 @@
+@import '/src/common/mini-reset.css';
+body {
+  margin: 50px;
+  background-color: whitesmoke;
+}
+:root {
+  --primary-color: green;
+  --secondary-color: gray;
+  --spacing-small: 8px;
+  --spacing-medium: 16px;
+  --spacing-large: 20px;
+}
+.card {
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  width: 500px;
+  height: 100px;
+  align-items: center;
+  padding: 30px 30px;
+  border-radius: var(--spacing-small);
+  border: 1px solid var(--secondary-color);
+
+  .card__left {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    .card__left__info {
+      h2 {
+        color: green;
+        font-family: sans-serif;
+        font-weight: bold;
+      }
+      img {
+        width: 50px;
+        height: 50px;
+      }
+    }
+  }
+}
+
+span {
+  color: green;
+}

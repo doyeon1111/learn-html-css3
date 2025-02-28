@@ -1,0 +1,28 @@
+/*기본적으로 적용될 배경색. */
+body {
+  background-color: yellow;
+  font-size: clamp(0.75rem, 2vw, 3rem);
+  @media (min-width: 600px) and (max-width: 800px) {
+    background-color: pink;
+  }
+
+  @media (min-width: 1000px) {
+    background-color: lime;
+  }
+}
+
+/* 뷰포트 크기에 따라 적용될 배경색  */
+/* @media (min-width: 600px) {
+  body {
+    background-color: pink;
+  }
+}
+/* 모바일에서 가로 모드볼떄 ORIENTATION :LANDSCAPE */
+/* 가로모기 보드에서 적용될 배경색 - ORAGNE */
+/* @media (orientation: landscape) {
+  body {
+    background-color: orange;
+  }
+} */
+
+/* 따로따로 작성하는게아닌 미디어쿼리는 중첩해서 묶어서 관리하는게좋음 moblie first 기준으로 작성하는게좋음음 */

@@ -1,0 +1,22 @@
+.sr-only {
+  /* 일반 흐름을 벗어나 화면에서 뛰우는거  */
+  position: absolute;
+  /* 내가 정한 컨텐츠보다  상자가 작으면 오버플로우, 오프라인 온라인 이 width 1px height 1px 당연히 넘겠지. */
+
+  /* width height 를 0으로 설정하게되면 영역이 없기떄문에 스크린리더가 포커싱을 못해해 */
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  /* 약간의 트릭  , 빨간점을 화면 밖으로 처리하기위한.? */
+  margin: -1px;
+  overflow: hidden;
+  /* position absoloute 랑 같이사,용 원하는부분 잘라서 원하는모양 설정도가능하고 등등 */
+
+  /* polygon 타입일떄 점이 세개이면 xy 축 세개 설정하고 사각형이면 4개 설정하고 이런식으로 (x y, xy ,xy) */
+  clip-path: inset(50%);
+  /* 공백문자에대한 처리, 줄바꿈에대한 처리, 줄바꿈 처리 안한다. 줄바꿈 금지. white-space:nowrap */
+  white-space: nowrap;
+  /* 혹시나 테두리가 있는 요소이면 보더를 없애주기위해 
+  border :0 이라고 지정해줘도돼돼 */
+  border-width: 0;
+}

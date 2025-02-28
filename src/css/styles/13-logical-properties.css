@@ -1,0 +1,20 @@
+@import '/src/common/theme.css';
+.case-01 {
+  display: flex;
+  inline-size: 300px;
+  gap: 3px;
+  border: 1px solid black;
+  flex-wrap: wrap;
+  [class*='item'] {
+    background: var(--pastel-yellow);
+
+    block-size: 300px;
+    text-align: center;
+    inline-size: 100px;
+    /* normal flow 일떄 align content 수직 가운데 정렬 */
+    align-content: center;
+
+    text-align: center;
+    block-size: 100px;
+  }
+}
